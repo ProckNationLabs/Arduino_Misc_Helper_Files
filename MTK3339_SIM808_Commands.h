@@ -2,6 +2,7 @@
 Some of the code below contains code parts from an Arduino library file named "Adafruit_GPS.h" created
 by the fine peoples at Adafruit.  And as requested by the text at the beginning of the library file I
 am including attribution to Adafruit.  Thanks
+
 Written by Jason Procknow -= ProckNation Labs =-
 */
 

@@ -13,14 +13,14 @@ for the ultimate GPS module!
 Tested and works great with the Adafruit Ultimate GPS module
 using MTK33x9 chipset
     ------> http://www.adafruit.com/products/746
-Pick one up today at the Adafruit electronics shop 
+Pick one up today at the Adafruit electronics shop
 and help support open source hardware & software! -ada
 
-Adafruit invests time and resources providing this open source code, 
-please support Adafruit and open-source hardware by purchasing 
+Adafruit invests time and resources providing this open source code,
+please support Adafruit and open-source hardware by purchasing
 products from Adafruit!
 
-Written by Limor Fried/Ladyada  for Adafruit Industries.  
+Written by Limor Fried/Ladyada  for Adafruit Industries.
 BSD license, check license.txt for more information
 All text above must be included in any redistribution
 ************************************************/
@@ -40,8 +40,13 @@ All text above must be included in any redistribution
 #define PMTK_API_SET_FIX_CTL_5HZ  "$PMTK300,200,0,0,0,0*2F"
 // Can't fix position faster than 5 times a second!
 
-#define PMTK_SET_BAUD_57600 "$PMTK251,57600*2C"
+//Change baud rate commands
 #define PMTK_SET_BAUD_9600 "$PMTK251,9600*17"
+#define PMTK_SET_BAUD_14400 "$PMTK251,14400*29"
+#define PMTK_SET_BAUD_19200 "$PMTK251,19200*22"
+#define PMTK_SET_BAUD_38400 "$PMTK251,38400*27"
+#define PMTK_SET_BAUD_57600 "$PMTK251,57600*2C"
+#define PMTK_SET_BAUD_115200 "$PMTK251,115200*1F"
 
 // turn on only the second sentence (GPRMC)
 #define PMTK_SET_NMEA_OUTPUT_RMCONLY "$PMTK314,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0*29"
@@ -55,6 +60,16 @@ All text above must be included in any redistribution
 // to generate your own sentences, check out the MTK command datasheet and use a checksum calculator
 // such as the awesome http://www.hhhh.org/wiml/proj/nmeaxor.html
 
+// Nav Speed threshold
+#define PMTK_SET_NAV_THRESHOLD_02_MPS "$PMTK386,0.2*3F"
+#define PMTK_SET_NAV_THRESHOLD_04_MPS "$PMTK386,0.4*39"
+#define PMTK_SET_NAV_THRESHOLD_06_MPS "$PMTK386,0.6*38"
+#define PMTK_SET_NAV_THRESHOLD_08_MPS "$PMTK386,0.8*35"
+#define PMTK_SET_NAV_THRESHOLD_10_MPS "$PMTK386,1.0*3C"
+#define PMTK_SET_NAV_THRESHOLD_15_MPS "$PMTK386,1.5*39"
+#define PMTK_SET_NAV_THRESHOLD_20_MPS "$PMTK386,2.0*3F"
+
+//LOCUS Logging commands
 #define PMTK_LOCUS_STARTLOG  "$PMTK185,0*22"
 #define PMTK_LOCUS_STOPLOG "$PMTK185,1*23"
 #define PMTK_LOCUS_STARTSTOPACK "$PMTK001,185,3*3C"
@@ -74,6 +89,12 @@ All text above must be included in any redistribution
 // ask for the release and version
 #define PMTK_Q_RELEASE "$PMTK605*31"
 
-// request for updates on antenna status 
-#define PGCMD_ANTENNA "$PGCMD,33,1*6C" 
-#define PGCMD_NOANTENNA "$PGCMD,33,0*6D" 
+// request for updates on antenna status
+#define PGCMD_ANTENNA "$PGCMD,33,1*6C"
+#define PGCMD_NOANTENNA "$PGCMD,33,0*6D"
+
+// Request current antenna status
+#define PGTOP_ANTENNA_STATUS "$PGTOP,11,3*6F"
+
+
+
